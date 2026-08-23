@@ -18,10 +18,10 @@
     <Grid RowDefinitions="Auto,*">
 
         <!-- Header -->
-        <Border Grid.Row="0" Background="#1D82C6" Padding="24,14">
+        <Border Grid.Row="0" Background="#1D82C6" Padding="22,12">
             <Grid ColumnDefinitions="*,Auto">
                 <TextBlock Grid.Column="0" Text="KASSENSYSTEM VEREINS-EVENT"
-                           Foreground="White" FontSize="22" FontWeight="Bold"
+                           Foreground="White" FontSize="20" FontWeight="Bold"
                            VerticalAlignment="Center" />
                 <TextBlock Grid.Column="1" Text="{Binding ClockText}"
                            Foreground="White" FontSize="18"
@@ -50,7 +50,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Border Margin="6" Background="White" CornerRadius="10"
-                                        BorderBrush="#D5E4EE" BorderThickness="1" MinWidth="220"
+                                        BorderBrush="#D5E4EE" BorderThickness="1" MinWidth="170"
                                         VerticalAlignment="Top">
                                     <DockPanel LastChildFill="True">
                                         <Border DockPanel.Dock="Top" Background="{Binding HeaderBackground}"
@@ -63,7 +63,7 @@
                                         <ItemsControl ItemsSource="{Binding Products}" Margin="8">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <Button Margin="0,4" Padding="12,14"
+                                                    <Button Margin="0,4" Padding="8,10"
                                                             HorizontalAlignment="Stretch"
                                                             HorizontalContentAlignment="Center"
                                                             Background="{Binding Background}"
@@ -142,7 +142,7 @@
                                FontSize="16" FontWeight="SemiBold" Margin="0,0,0,10" />
 
                     <!-- Numpad: every button fills its cell equally for easy touch hits -->
-                    <Grid Grid.Row="6" Height="320" Margin="0,0,0,10"
+                    <Grid Grid.Row="6" Height="220" Margin="0,0,0,10"
                           ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*">
                         <Button Grid.Row="0" Grid.Column="0" Content="7" Classes="numpad"
                                 Command="{Binding DigitCommand}" CommandParameter="7" />
@@ -197,12 +197,12 @@
 
     <Window.Styles>
         <Style Selector="Button.numpad, Button.numpadMuted, Button.numpadClear">
-            <Setter Property="Margin" Value="4" />
+            <Setter Property="Margin" Value="3" />
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontSize" Value="19" />
             <Setter Property="FontWeight" Value="SemiBold" />
         </Style>
         <Style Selector="Button.numpad">
