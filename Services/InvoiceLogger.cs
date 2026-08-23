@@ -1,7 +1,7 @@
 using System.Globalization;
 using ClosedXML.Excel;
 
-namespace TVM_CalcUI.Services;
+namespace Vereinskasse.Services;
 
 public static class InvoiceLogger
 {

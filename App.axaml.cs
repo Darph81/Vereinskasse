@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace TVM_CalcUI;
+namespace Vereinskasse;
 
 public partial class App : Application
 {

@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace TVM_CalcUI;
+namespace Vereinskasse;
 
 class Program
 {
