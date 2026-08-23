@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
 using Avalonia.Media;
 
-namespace TVM_CalcUI.Models;
+namespace Vereinskasse.Models;
 
 public class CategoryGroup
 {

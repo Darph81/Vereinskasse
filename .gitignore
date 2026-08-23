@@ -16,7 +16,6 @@ x86/
 *.suo
 *.userprefs
 *.rsuser
-*.lock
 
 # Rider / ReSharper
 .idea/
@@ -44,13 +43,9 @@ wwwroot/dist/
 appsettings.Development.json
 appsettings.Local.json
 
-# Entity Framework
-*.db
-*.db-shm
-*.db-wal
-
 # Logs
 *.log
+*.lock
 logs/
 Log/
 
@@ -100,6 +95,9 @@ docker-compose.override.yml
 # Publish output
 publish/
 PublishProfiles/
+
+# Windows-Setup (Inno Setup Build-Output)
+deploy/Output/
 
 # JetBrains
 *.DotSettings

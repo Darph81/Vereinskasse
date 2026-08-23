@@ -2,7 +2,7 @@ using System.Globalization;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace TVM_CalcUI.Models;
+namespace Vereinskasse.Models;
 
 public partial class OrderLine : ObservableObject
 {

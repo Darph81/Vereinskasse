@@ -1,9 +1,9 @@
 using System.Globalization;
 using Avalonia.Media;
 using ClosedXML.Excel;
-using TVM_CalcUI.Models;
+using Vereinskasse.Models;
 
-namespace TVM_CalcUI.Services;
+namespace Vereinskasse.Services;
 
 public static class PriceListLoader
 {

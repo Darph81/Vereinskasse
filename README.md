@@ -33,7 +33,7 @@ Alle Pakete werden beim ersten `dotnet restore` bzw. `dotnet build` automatisch 
 ## Projektstruktur
 
 ```
-TVM_CalcUI/
+Vereinskasse/
 ├── config/
 │   ├── Preisliste.xlsx      # Eingabedatei: Artikel, Preise, Kategorien
 │   └── Screen.jpeg          # Layout-Referenz für die Oberfläche
@@ -46,7 +46,7 @@ TVM_CalcUI/
 ├── MainWindow.axaml(.cs)    # Kassenoberfläche
 ├── App.axaml(.cs)
 ├── Program.cs
-└── TVM_CalcUI.csproj
+└── Vereinskasse.csproj
 ```
 
 ## Konfiguration
@@ -119,6 +119,34 @@ dotnet publish -c Release -r <RID>
 **Wichtig beim Deployment:**
 - Der Ordner `config/` mit `Preisliste.xlsx` muss neben der ausführbaren Datei liegen (wird durch `dotnet publish` automatisch mit übernommen).
 - Der Ordner `Rechnungen/` wird beim ersten Start automatisch neben der Anwendung angelegt — das Zielverzeichnis muss dafür Schreibrechte besitzen.
+
+### Windows-Setup erstellen (Installer)
+
+Für eine fertige `Setup.exe` zur Installation auf einem Windows-Rechner liegt im Ordner [`deploy/`](deploy/) ein vorbereitetes [Inno Setup](https://jrsoftware.org/isinfo.php)-Skript samt PowerShell-Build-Script:
+
+```
+deploy/
+├── Setup.iss             # Inno Setup Skript (Installer-Definition)
+└── build-installer.ps1   # publish + Setup.exe in einem Schritt
+```
+
+**Voraussetzungen (auf dem Windows-Build-Rechner):**
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [Inno Setup 6](https://jrsoftware.org/isinfo.php) (kostenlos)
+
+**Ausführen** (PowerShell, im Projektstammverzeichnis):
+
+```powershell
+.\deploy\build-installer.ps1
+```
+
+Das Script führt `dotnet publish` (win-x64, self-contained, single-file) aus und kompiliert anschließend `deploy/Setup.iss` mit dem Inno Setup Compiler (`ISCC.exe`, wird automatisch im `PATH` oder im Standard-Installationsordner gesucht). Das fertige Setup liegt danach unter:
+
+```
+deploy/Output/VereinskasseSetup.exe
+```
+
+Der Installer installiert die Anwendung ohne Administratorrechte in `%LOCALAPPDATA%\Vereinskasse` (die App schreibt zur Laufzeit ihre Rechnungsdateien direkt neben die exe und braucht dafür Schreibrechte im Installationsverzeichnis), legt optional eine Desktop-Verknüpfung an und bietet am Ende den direkten Start der Anwendung an.
 
 ## Lizenz
 

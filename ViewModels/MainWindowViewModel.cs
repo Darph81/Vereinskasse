@@ -5,10 +5,10 @@ using System.Linq;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using TVM_CalcUI.Models;
-using TVM_CalcUI.Services;
+using Vereinskasse.Models;
+using Vereinskasse.Services;
 
-namespace TVM_CalcUI.ViewModels;
+namespace Vereinskasse.ViewModels;
 
 public partial class MainWindowViewModel : ObservableObject
 {

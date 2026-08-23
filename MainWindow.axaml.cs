@@ -1,7 +1,7 @@
 using Avalonia.Controls;
-using TVM_CalcUI.ViewModels;
+using Vereinskasse.ViewModels;
 
-namespace TVM_CalcUI;
+namespace Vereinskasse;
 
 public partial class MainWindow : Window
 {

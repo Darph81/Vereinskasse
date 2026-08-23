@@ -2,7 +2,7 @@ using System.Globalization;
 using System.Windows.Input;
 using Avalonia.Media;
 
-namespace TVM_CalcUI.Models;
+namespace Vereinskasse.Models;
 
 public class Product
 {
